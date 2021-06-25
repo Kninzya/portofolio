@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
 /*
   scssでカスタマイズしています。
@@ -89,13 +89,13 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  border: 0;
-  padding: 0;
   font-size: 100%;
   font-weight: normal;
-  vertical-align: baseline;
   font-style: normal;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  border: 0;
 }
 
 article,
@@ -125,7 +125,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 
@@ -141,8 +141,8 @@ ul {
 }
 
 table {
-  border-collapse: collapse;
   border-spacing: 0;
+  border-collapse: collapse;
 }
 
 caption,
@@ -168,12 +168,12 @@ body {
 }
 
 @font-face {
-  font-family: "eh";
+  font-family: 'eh';
   src: url(../font/EHSMB.TTF);
 }
 
 @font-face {
-  font-family: "header";
+  font-family: 'header';
   src: url(../font/Geotica_2012.otf);
 }
 
@@ -183,13 +183,13 @@ body {
 ========================================= */
 
 .c-container {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   max-width: 1320px;
   height: auto;
   margin: 0 auto;
   padding: 0 2.5rem;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
 /*----- レスポンシブ表示切り替え -----*/
@@ -211,11 +211,11 @@ body {
 /*----- 共通パーツ -----*/
 
 .c-section_header {
-  margin: 0 auto 5rem;
+  font-family: header,'Roboto', 'Helvetica Neue', sans-serif;
   font-size: 4.5rem;
-  font-family: header,"Roboto", "Helvetica Neue", sans-serif;
-  text-align: center;
   line-height: 1;
+  margin: 0 auto 5rem;
+  text-align: center;
 }
 
 .c-partition_icon {
@@ -225,10 +225,10 @@ body {
 }
 
 .c-slideup {
-  -webkit-transform: translate3d(0, 50px, 0);
-  transform: translate3d(0, 50px, 0);
   -webkit-transition: all 1.5s ease;
   transition: all 1.5s ease;
+  -webkit-transform: translate3d(0, 50px, 0);
+  transform: translate3d(0, 50px, 0);
   opacity: 0;
 }
 
@@ -239,10 +239,10 @@ body {
 }
 
 .c-slideleft {
-  -webkit-transform: translate3d(100px, 0, 0);
-  transform: translate3d(100px, 0, 0);
   -webkit-transition: all 1.5s ease;
   transition: all 1.5s ease;
+  -webkit-transform: translate3d(100px, 0, 0);
+  transform: translate3d(100px, 0, 0);
   opacity: 0;
 }
 
@@ -272,6 +272,7 @@ body {
 @media screen and (max-width: 768px) {
   .c-container {
     width: 100%;
+    padding: 0 .9375rem;
   }
 
   .c-pc_only {
@@ -284,6 +285,15 @@ body {
 
   .c-sp_only {
     display: block !important;
+  }
+
+  .c-section_header {
+    font-size: 2.25rem;
+    margin: 0 auto 3.125rem;
+  }
+
+  .c-partition_icon {
+    width: 6.25rem;
   }
 }
 

@@ -36,6 +36,7 @@
   }
   @include sp {
     width: 100%;
+    padding: 0 rem-calc(15px);
   }
   @include smallsp {
     width: 100%;
@@ -82,12 +83,19 @@
   font-family: header,'Roboto', 'Helvetica Neue', sans-serif;
   text-align: center;
   line-height: 1;
+  @include sp {
+    margin: 0 auto rem-calc(50px);
+    font-size: rem-calc(36px);
+  }
 }
 
 .c-partition_icon {
   width: rem-calc(160px);
   height: auto;
   margin: 80px auto 0;
+  @include sp {
+    width: rem-calc(100px);
+  }
 }
 
 .c-slideup {

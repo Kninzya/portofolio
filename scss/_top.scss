@@ -80,7 +80,7 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 9000;
   width: 100vw;
   height: auto;
   background-color: $color-blue;
@@ -94,6 +94,9 @@ button {
   width: 100%;
   height: 70px;
   margin: 0 auto;
+  @include sp {
+    height: 50px;
+  }
 }
 
 .p-header__companyname {
@@ -102,6 +105,9 @@ button {
   font-weight: 700;
   line-height: 1;
   white-space: nowrap;
+  @include sp {
+    font-size: rem-calc(18px);
+  }
 }
 
 .p-header__innerlinks {
@@ -110,6 +116,9 @@ button {
   align-items: center;
   flex: 1;
   @include largetab {
+    display: none;
+  }
+  @include sp {
     display: none;
   }
 }
@@ -125,6 +134,117 @@ button {
     font-weight: 500;
     line-height: 1;
     white-space: nowrap;
+  }
+}
+
+.c-menu_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9500;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .8);
+}
+
+.p-header__navToggle {
+  position: relative;
+  display: none;
+  width: 20px;
+  height: 14px;
+  background: transparent;
+  text-align: center;
+  cursor: pointer;
+  @include largetab {
+    display: block;
+  }
+  @include sp {
+    display: block;
+  }
+}
+
+.p-header__navToggle span {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #fff;
+  transition: 0.35s ease-in-out;
+}
+
+.p-header__navToggle span:nth-child(1) {
+  top: 0;
+}
+
+.p-header__navToggle span:nth-child(2) {
+  top: 6px;
+}
+
+.p-header__navToggle span:nth-child(3) {
+  top: 12px;
+}
+
+.p-header__navToggle.js-active span:nth-child(1) {
+  top: 6px;
+  transform: rotate(-45deg);
+}
+
+.p-header__navToggle.js-active span:nth-child(2),
+.p-header__navToggle.js-active span:nth-child(3) {
+  top: 6px;
+  transform: rotate(45deg);
+}
+
+.p-header__menu_sp {
+  position: fixed;
+  display: none;
+  top: 70px;
+  right: 0;
+  transform: translateX(100%);
+  width: 100%;
+  height: calc( 100% - 70px );
+  padding: rem-calc(30px) 5%;
+  background-color: #000;
+  box-sizing: border-box;
+  transition: .3s;
+  @include largetab {
+    display: block;
+  }
+  @include sp {
+    display: block;
+    top: 50px;
+    height: calc( 100% - 50px );
+  }
+  &.js-active {
+    transform: translateX(0);
+  }
+}
+
+.p-header__menu_sp__links {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.p-header__menu_sp__link {
+  display: block;
+  line-height: 1;
+  &:not(:first-child) {
+    margin-top: rem-calc(20px);
+    border-top: 1px solid #fff;
+    padding-top: rem-calc(20px);
+  }
+  & a {
+    text-decoration: none;
+    display: block;
+    color: #fff;
+    font-size: rem-calc(16px);
+    @include font-english;
+    font-weight: 500;
+    line-height: 1;
   }
 }
 
@@ -148,14 +268,26 @@ button {
   &.slide1 {
     background: url(../images/bg-topvisual1@2x.jpg) bottom center no-repeat;
     background-size: cover;
+    @include sp {
+      background: url(../images/bg-topvisual1_sp@2x.png) bottom center no-repeat;
+      background-size: cover;
+    }
   }
   &.slide2 {
     background: url(../images/bg_topvisual2@2x.jpg) bottom center no-repeat;
     background-size: cover;
+    @include sp {
+      background: url(../images/bg-topvisual2_sp@2x.png) bottom center no-repeat;
+      background-size: cover;
+    }
   }
   &.slide3 {
     background: url(../images/bg_topvisual3@2x.jpg) 50% 50% no-repeat;
     background-size: cover;
+    @include sp {
+      background: url(../images/bg-topvisual3_sp@2x.png) bottom center no-repeat;
+      background-size: cover;
+    }
   }
 }
 
@@ -166,15 +298,23 @@ button {
   transform: translateY(-50%);
   width: 100%;
   height: auto;
+  box-sizing: border-box;
   color: #FFF;
   font-family: eh, 'Roboto', 'Helvetica Neue', sans-serif;
   font-size: rem-calc(80px);
   text-align: center;
+  @include sp {
+    padding: 0 rem-calc(15px);
+    font-size: rem-calc(32px);
+    line-height: 1.5;
+  }
 }
+
 .typed::after {
   content: "|";
   animation: blink 0.7s infinite;
 }
+
 @keyframes blink {
   50%{opacity: 0;}
 }
@@ -189,6 +329,9 @@ button {
   margin: 0 auto;
   padding: 80px 0 100px;
   box-sizing: border-box;
+  @include sp {
+    padding: 60px 0 60px;
+  }
 }
 
 .p-about__flexbox {
@@ -206,6 +349,7 @@ button {
   width: rem-calc(380px);
   height: auto;
   @include sp {
+    width: rem-calc(300px);
     margin: 0 auto;
   }
 }
@@ -222,6 +366,9 @@ button {
   font-weight: 700;
   text-align: center;
   line-height: 1;
+  @include sp {
+    font-size: rem-calc(24px);
+  }
 }
 
 .p-about__contact {
@@ -242,6 +389,10 @@ button {
   font-weight: 700;
   line-height: 1;
   overflow: hidden;
+  @include sp {
+    height: rem-calc(45px);
+    font-size: rem-calc(18px);
+  }
   &:after {
     position: absolute;
     top: 0;
@@ -268,8 +419,10 @@ button {
   font-size: rem-calc(16px);
   text-align: center;
   line-height: 1.5;
+  @include sp {
+    font-size: rem-calc(14px);
+  }
 }
-
 
 .p-about__textbox {
   flex: 1;
@@ -278,6 +431,7 @@ button {
   padding-top: rem-calc(20px);
   @include sp {
     width: 100%;
+    max-width: 500px;
     height: auto;
     margin: rem-calc(30px) auto 0;
   }
@@ -306,6 +460,10 @@ button {
   font-weight: 500;
   line-height: 1;
   color: #fff;
+  @include sp {
+    height: rem-calc(40px);
+    font-size: rem-calc(18px);
+  }
   &:before {
     content: "";
     position: absolute;
@@ -326,11 +484,18 @@ button {
   margin: 0 auto;
   padding: 0 rem-calc(10px);
   box-sizing: border-box;
+  @include sp {
+    display: block;
+  }
 }
 
 .p-about__skill {
   width: 48%;
   height: auto;
+  @include sp {
+    width: 100%;
+    margin-top: rem-calc(20px);
+  }
   &:nth-child(n + 3) {
     margin-top: rem-calc(20px);
   }
@@ -343,6 +508,9 @@ button {
     height: auto;
     font-size: rem-calc(22px);
     line-height: 1;
+    @include sp {
+      font-size: rem-calc(16px);
+    }
   }
   & dd {
     position: relative;
@@ -352,6 +520,9 @@ button {
     border-radius: 2px;
     margin-top: 5px;
     overflow: hidden;
+    @include sp {
+      height: rem-calc(30px);
+    }
     &:after {
       content: '';
       position: absolute;
@@ -398,6 +569,9 @@ button {
   font-size: rem-calc(18px);
   text-align: center;
   line-height: 1.5;
+  @include sp {
+    font-size: rem-calc(14px);
+  }
 }
 
 .p-about__textbox__smallsection__smalltext {
@@ -405,6 +579,9 @@ button {
   font-size: rem-calc(14px);
   text-align: center;
   line-height: 1.5;
+  @include sp {
+    font-size: rem-calc(12px);
+  }
 }
 
 /*----- MESSAGEカスタマイズ -----*/
@@ -417,6 +594,9 @@ button {
   margin: 0 auto;
   padding: 0 0 100px;
   box-sizing: border-box;
+  @include sp {
+    padding: 0 0 60px;
+  }
 }
 
 .p-message__text {
@@ -427,6 +607,10 @@ button {
   font-size: 16px;
   text-align: justify;
   line-height: 1.5;
+  @include sp {
+    max-width: 500px;
+    font-size: rem-calc(14px);
+  }
 }
 
 /*----- SERVICEカスタマイズ -----*/
@@ -439,6 +623,97 @@ button {
   margin: 0 auto;
   padding: 0 0 100px;
   box-sizing: border-box;
+   @include sp {
+    padding: 0 0 60px;
+  }
+}
+
+.p-service__lists {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding-top: rem-calc(200px);
+  box-sizing: border-box;
+  @include sp {
+    display: block;
+    max-width: 400px;
+    padding-top: 0;
+  }
+}
+
+.p-service__list {
+  position: relative;
+  width: 30%;
+  height: auto;
+  box-sizing: border-box;
+  @include sp {
+    width: 100%;
+    padding-top: rem-calc(200px);
+    &:not(:first-child) {
+      margin-top: rem-calc(30px);
+    }
+  }
+}
+
+.p-service__list__title {
+  font-size: rem-calc(20px);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1;
+  @include sp {
+    font-size: rem-calc(18px);
+  }
+}
+
+.p-service__list__text {
+  margin-top: 14px;
+  font-size: rem-calc(16px);
+  text-align: justify;
+  line-height: 1.5;
+  @include sp {
+    font-size: rem-calc(14px);
+  }
+}
+
+.p-service__list__img {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  width: 100%;
+  height: auto;
+  @include sp {
+    transform: translate(-50% , 0);
+  }
+  &.html {
+    top: -20px;
+    max-width: rem-calc(200px);
+    @include sp {
+      top: 0;
+    }
+  }
+  &.wordpress {
+    top: -50px;
+    max-width: rem-calc(173px);
+    @include tab {
+      top: -30px;
+    }
+    @include sp {
+      top: 0;
+    }
+  }
+  &.shopify {
+    top: -60px;
+    max-width: rem-calc(170px);
+    @include tab {
+      top: -30px;
+    }
+    @include sp {
+      top: 0;
+    }
+  }
 }
 
 /*----- PRICEカスタマイズ -----*/
@@ -451,6 +726,103 @@ button {
   margin: 0 auto;
   padding: 0 0 100px;
   box-sizing: border-box;
+   @include sp {
+    padding: 0 0 60px;
+  }
+}
+
+.p-price__lists__container {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  overflow-x: scroll;
+}
+
+.p-price__lists {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border: 2px solid $color-orange;
+  border-radius: rem-calc(2px);
+  box-sizing: border-box;
+  @include sp {
+    min-width: 500px;
+  }
+}
+
+.p-price__list {
+  display: flex;
+  width: 100%;
+  height: auto;
+  font-size: rem-calc(18px);
+  text-align: center;
+  line-height: 1.5;
+  @include sp {
+    font-size: rem-calc(12px);
+  }
+  & div {
+    padding: rem-calc(16px) 0;
+    box-sizing: border-box;
+  }
+  &:nth-child(even) {
+    background-color: #fff;
+  }
+  &:nth-child(odd) {
+    background-color: #FFF4E4;
+  }
+  &.titlearea {
+    background-color: $color-orange;
+    color: #fff;
+    font-size: rem-calc(22px);
+    @include sp {
+      font-size: rem-calc(16px);
+      & div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.p-price__list__content {
+  width: 40%;
+}
+
+.p-price__list__coding {
+  width: 30%;
+}
+
+.p-price__list__design {
+  width: 30%;
+}
+
+.p-price__supplements {
+  width: 100%;
+  height: auto;
+  margin: rem-calc(23px) auto;
+  @include sp {
+    margin: rem-calc(16px) auto;
+  }
+}
+
+.p-price__supplement {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-left: 1.2em;
+  box-sizing: border-box;
+  font-size: rem-calc(16px);
+  line-height: 1.5;
+  @include sp {
+    font-size: rem-calc(12px);
+  }
+  &:after {
+    content: '※';
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 
 /*----- PORTFOLIOカスタマイズ -----*/
@@ -463,6 +835,85 @@ button {
   margin: 0 auto;
   padding: 0 0 100px;
   box-sizing: border-box;
+  @include sp {
+    padding: 0 0 60px;
+  }
+}
+
+.p-portfolio__lists {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  @include sp {
+    display: block;
+    max-width: 500px;
+  }
+}
+
+.p-portfolio__list {
+  width: 31%;
+  height: auto;
+  transition: .3s;
+  @include sp {
+    width: 100%;
+    &:not(:first-child) {
+      margin-top: rem-calc(30px);
+    }
+  }
+  &:not(:nth-child(3n)) {
+    margin-right: 2%;
+    @include sp {
+      margin-right: 0;
+    }
+  }
+  &:nth-child(n + 4) {
+    margin-top: rem-calc(30px);
+  }
+  & a {
+    text-decoration: none;
+  }
+  &:hover {
+    opacity: .7;
+  }
+}
+
+.p-portfolio__list__title {
+  width: 100%;
+  height: auto;
+  padding: rem-calc(10px) 0;
+  background-color: $color-blue;
+  box-sizing: border-box;
+  font-size: rem-calc(18px);
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  @include sp {
+    font-size: rem-calc(16px);
+  }
+}
+
+.p-portfolio__list__img {
+  width: 100%;
+  height: rem-calc(250px);
+  margin: rem-calc(20px) auto 0;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display:none;
+  }
+}
+
+.p-portfolio__list__text {
+  margin: rem-calc(16px) auto 0;
+  font-size: rem-calc(16px);
+  color: $color-main;
+  text-align: justify;
+  line-height: 1.5;
+  @include sp {
+    font-size: rem-calc(14px);
+  }
 }
 
 /*----- WORKSカスタマイズ -----*/
@@ -475,6 +926,145 @@ button {
   margin: 0 auto;
   padding: 0 0 100px;
   box-sizing: border-box;
+  @include sp {
+    padding: 0 0 60px;
+  }
+}
+
+.p-works__listbox {
+  width: 100%;
+  max-width: 1150px;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid #707070;
+  border-radius: rem-calc(5px);
+  padding: rem-calc(25px) rem-calc(35px)  rem-calc(40px);
+  box-sizing: border-box;
+  @include sp {
+    max-width: 500px;
+    padding: rem-calc(15px) rem-calc(15px)  rem-calc(30px);
+  }
+}
+
+.p-works__lists {
+  width: 100%;
+  height: auto;
+}
+
+.p-works__list {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin-top: rem-calc(20px);
+  @include sp {
+    display: block;
+  }
+}
+
+.p-works__list__tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: rem-calc(120px);
+  height: rem-calc(30px);
+  margin-right: rem-calc(16px);
+  border-radius: rem-calc(3px);
+  font-size: rem-calc(12px);
+  color: #fff;
+  font-weight: 500;
+  line-height: 1;
+  &.html {
+    background-color: $color-lightblue;
+  }
+  &.wordpress {
+    background-color: $color-green;
+  }
+  &.shopify {
+    background-color: orange;
+  }
+}
+
+.p-works__list__text {
+  flex: 1;
+  font-size: rem-calc(16px);
+  line-height: rem-calc(30px);
+  @include sp {
+    width: 100%;
+    margin-top: rem-calc(10px);
+    font-size: rem-calc(14px);
+    line-height: 1.5;
+  }
+}
+
+.p-works__hiddenlists {
+  display: none;
+}
+
+.p-works__accordionbtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem-calc(330px);
+  height: rem-calc(50px);
+  margin: rem-calc(36px) auto 0;
+  border: 2px solid $color-blue;
+  border-radius: rem-calc(2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .25);
+  text-decoration: none;
+  font-size: rem-calc(20px);
+  color: $color-blue;
+  font-weight: 500;
+  line-height: 1;
+  overflow: hidden;
+  @include sp {
+    width: 100%;
+    max-width: rem-calc(330px);
+    height: rem-calc(40px);
+    font-size: rem-calc(16px);
+  }
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    z-index: -1;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: $color-blue;
+    transition: .3s;
+  }
+  &:hover {
+    opacity: 1;
+    color: #fff;
+    &:after {
+      transform: translateX(0);
+    }
+  }
+}
+
+.p-works__supplement {
+  position: relative;
+  width: 100%;
+  max-width: 1150px;
+  height: auto;
+  margin: rem-calc(16px) auto 0;
+  padding-left: 1.7em;
+  box-sizing: border-box;
+  font-size: rem-calc(14px);
+  line-height: 1.5;
+  @include sp {
+    max-width: 500px;
+    margin: rem-calc(12px) auto 0;
+    font-size: rem-calc(12px);
+  }
+  &:before {
+    content: '※';
+    position: absolute;
+    top: 0;
+    left: rem-calc(8px);
+  }
 }
 
 /*----- CONTACTカスタマイズ -----*/
@@ -487,12 +1077,18 @@ button {
   margin: 0 auto;
   padding: 0 0 180px;
   box-sizing: border-box;
+  @include sp {
+    padding: 0 0 100px;
+  }
 }
 
 .p-contact__text {
   font-size: rem-calc(18px);
   text-align: center;
   line-height: 1.5;
+  @include sp {
+    font-size: rem-calc(14px);
+  }
 }
 
 /*----- フッターカスタマイズ -----*/

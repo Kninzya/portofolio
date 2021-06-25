@@ -50,6 +50,8 @@
           <h1 class="p-header__companyname">
             LIBERTA WEB PROJECT
           </h1>
+          <!-- /.p-header__companyname -->
+
           <ul class="p-header__innerlinks">
             <li class="p-header__innerlink">
               <a href="#l-about">ABOUT</a>
@@ -64,7 +66,7 @@
               <a href="#l-price">PRICE</a>
             </li>
             <li class="p-header__innerlink">
-              <a href="#l-portforio">PORTFORIO</a>
+              <a href="#l-portfolio">PORTFORIO</a>
             </li>
             <li class="p-header__innerlink">
               <a href="#l-works">WORKS</a>
@@ -74,7 +76,36 @@
             </li>
           </ul>
           <!-- /.p-header__innerlinks -->
-          <!-- /.p-header__companyname -->
+
+          <button type="button" class="p-header__navToggle">
+            <span></span><span></span><span></span>
+          </button>
+          <nav class="p-header__menu_sp">
+            <ul class="p-header__menu_sp__links">
+              <li class="p-header__menu_sp__link">
+                <a href="#l-about">ABOUT</a>
+              </li>
+              <li class="p-header__menu_sp__link">
+                <a href="#l-message">MESSAGE</a>
+              </li>
+              <li class="p-header__menu_sp__link">
+                <a href="#l-service">SERVICE</a>
+              </li>
+              <li class="p-header__menu_sp__link">
+                <a href="#l-price">PRICE</a>
+              </li>
+              <li class="p-header__menu_sp__link">
+                <a href="#l-portfolio">PORTFORIO</a>
+              </li>
+              <li class="p-header__menu_sp__link">
+                <a href="#l-works">WORKS</a>
+              </li>
+              <li class="p-header__menu_sp__link">
+                <a href="#l-contact">CONTACT</a>
+              </li>
+            </ul>
+            <!-- /.p-header__menu_sp__links -->
+          </nav>
         </div>
         <!-- /.p-header__inner -->
       </div>
@@ -111,7 +142,7 @@
               </p>
               <p class="p-about__status c-slideup">
                 LIBERTA WEB PROJECT<br>
-                WEB ENGINEER/DESIGNER/DIRECTOR
+                WEB ENGINEER
               </p>
               <a href="https://twitter.com/ninjya_freedom" target="_blank" class="p-about__contact c-slideup">
                 CONTACT
@@ -171,7 +202,7 @@
                 </h1>
 
                 <p class="p-about__textbox__smallsection__text">
-                  静的サイトコーディング、Wordpress、Shopify etc...
+                  静的サイトコーディング、Wordpress、<br class="c-sp_only">Shopify etc...
                 </p>
               </section>
 
@@ -185,7 +216,7 @@
                 </p>
 
                 <p class="p-about__textbox__smallsection__smalltext">
-                  ※メッセージは基本即返信を心がけておりますのでいつでもお気軽にご連絡ください
+                  ※メッセージは基本即返信を心がけておりますので<br class="c-sp_only">いつでもお気軽にご連絡ください
                 </p>
               </section>
             </div>
@@ -235,7 +266,7 @@
           </h1>
 
           <ul class="p-service__lists">
-            <li class="p-service__list html">
+            <li class="p-service__list c-slideup">
               <h2 class="p-service__list__title">
                 HTML/CSSコーディング
               </h2>
@@ -244,8 +275,38 @@
                 具体的にはサイトが検索にヒットしやすくなるようSEOを意識し、ページ読み込み速度やメンテナンス性を意識して極力コードの共通パーツ化やコード設計・整形を行います。
                 また、FLOCSSというCSS設計に則っているため読みやすく修正しやすいコーディングが可能です。
               </p>
-              <figure class="p-service__list__img">
+              <figure class="p-service__list__img html">
                 <img src="images/icon-program.svg" alt="HTMLCSSイメージ">
+              </figure>
+            </li>
+            <!-- /.p-service__list -->
+
+            <li class="p-service__list c-slideup">
+              <h2 class="p-service__list__title">
+                Wordpress対応
+              </h2>
+              <p class="p-service__list__text">
+                お知らせ機能や画像投稿機能といった機能を用いて運用段階もサイト更新を行う場合、CMS(コンテンツマネジメントサービス）を用いてWebサイトを構築します。<br>
+                CMSの中で特に有名なのはWordpressといわれるシステムで、世界中のWebサイトの約4分の1はこのWordpressを用いて構築されていると言われています。<br>
+                Wordpressを用いた高機能なサイト構築も対応可能なので、まずはお気軽にご相談ください。
+              </p>
+              <figure class="p-service__list__img wordpress">
+                <img src="images/icon-wordpress.svg" alt="Wordpressイメージ">
+              </figure>
+            </li>
+            <!-- /.p-service__list -->
+
+            <li class="p-service__list c-slideup">
+              <h2 class="p-service__list__title">
+                Shopify対応
+              </h2>
+              <p class="p-service__list__text">
+                近年コロナ禍の影響も受け、自宅でも気軽に利用できるネットショップにて商品を販売するお店が増えています。<br>
+                数あるECサイト構築サービスの中でもshopifyはシンプルな管理画面で操作性も良く、ネット初心者でも比較的簡単にネットショップを構築・運用できるため急激にシェア率を伸ばしています。<br>
+                無料テーマを用いた安価なネットショップ構築から、機能やデザインに拘ったカスタマイズまで対応可能なのでお気軽にご相談ください。
+              </p>
+              <figure class="p-service__list__img shopify">
+                <img src="images/icons-shopify.svg" alt="Wordpressイメージ">
               </figure>
             </li>
             <!-- /.p-service__list -->
@@ -265,6 +326,99 @@
           <h1 class="c-section_header c-slideup">
             PRICE
           </h1>
+
+          <div class="p-price__lists__container c-slideup">
+            <ul class="p-price__lists">
+              <li class="p-price__list title titlearea">
+                <div class="p-price__list__content">
+                  内容
+                </div>
+                <div class="p-price__list__coding">
+                  コーディング
+                </div>
+                <div class="p-price__list__design">
+                  コーディング+<br class="c-sp_only">デザイン
+                </div>
+              </li>
+              <li class="p-price__list title">
+                <div class="p-price__list__content">
+                  TOPページ
+                </div>
+                <div class="p-price__list__coding">
+                  15,000円〜
+                </div>
+                <div class="p-price__list__design">
+                  30,000円〜
+                </div>
+              </li>
+              <li class="p-price__list title">
+                <div class="p-price__list__content">
+                  下層ページ
+                </div>
+                <div class="p-price__list__coding">
+                  8,000円〜
+                </div>
+                <div class="p-price__list__design">
+                  16,000円〜
+                </div>
+              </li>
+              <li class="p-price__list title">
+                <div class="p-price__list__content">
+                  LP(レスポンシブ対応込)
+                </div>
+                <div class="p-price__list__coding">
+                  20,000円〜
+                </div>
+                <div class="p-price__list__design">
+                  40,000円〜
+                </div>
+              </li>
+              <li class="p-price__list title">
+                <div class="p-price__list__content">
+                  jQuery（1機能あたり）
+                </div>
+                <div class="p-price__list__coding">
+                  3,000円〜
+                </div>
+                <div class="p-price__list__design">
+                </div>
+              </li>
+              <li class="p-price__list title">
+                <div class="p-price__list__content">
+                  Wordpress(10ページ想定価格)
+                </div>
+                <div class="p-price__list__coding">
+                  120,000円〜
+                </div>
+                <div class="p-price__list__design">
+                  220,000円〜
+                </div>
+              </li>
+              <li class="p-price__list title">
+                <div class="p-price__list__content">
+                  Shopify
+                </div>
+                <div class="p-price__list__coding">
+                  200,000円〜
+                </div>
+                <div class="p-price__list__design">
+                  300,000円〜
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- /.p-price__lists__container -->
+
+          <ul class="p-price__supplements c-slideup">
+            <li class="p-price__supplement">
+              全てレスポンシブ対応込みの価格です。
+            </li>
+            <li class="p-price__supplement">
+              記載している価格は概算価格となります。<br>実際にかかる費用はページ構成、ページ数や文量、ご希望される機能の数や実装難易度によって変わってきます。<br>どんなサイトをご希望かヒアリングしたのち無料で見積もりを提出させていただきますのでまずはお気軽にご相談ください。
+            </li>
+          </ul>
+          <!-- /.p-price__supplements -->
+
           <div class="c-partition_icon c-slideleft">
             <img src="images/icon-partition.svg" alt="">
           </div>
@@ -278,6 +432,61 @@
           <h1 class="c-section_header c-slideup">
             PORTFOLIO
           </h1>
+
+          <ul class="p-portfolio__lists">
+            <li class="p-portfolio__list c-slideup">
+              <a href="https://freedom-engineers-portfolio.xyz/phototime/" target="_blank">
+                <h2 class="p-portfolio__list__title">
+                  架空のLP
+                </h2>
+                <div class="p-portfolio__list__img">
+                  <figure>
+                    <img src="images/phototime_screenshot.png" alt="">
+                  </figure>
+                </div>
+                <p class="p-portfolio__list__text">
+                  Web制作者コミュニティにて公開されていたデザインカンプからコーディングしたLPです。<br>
+                  スライダー機能を実装しています。<br>
+                  非レスポンシブ対応
+                </p>
+              </a>
+            </li>
+            <li class="p-portfolio__list c-slideup">
+              <a href="https://freedom-engineers-portfolio.xyz/tajem/" target="_blank">
+                <h2 class="p-portfolio__list__title">
+                  架空のコーポレートサイト
+                </h2>
+                <div class="p-portfolio__list__img">
+                  <figure>
+                    <img src="images/tajem_screenshot.png" alt="">
+                  </figure>
+                </div>
+                <p class="p-portfolio__list__text">
+                  Web制作者コミュニティにて公開されていたデザインカンプからコーディングしたコーポレートサイトです。<br>
+                  スライダー機能を実装しています。<br>
+                  非レスポンシブ対応
+                </p>
+              </a>
+            </li>
+            <li class="p-portfolio__list c-slideup">
+              <a href="http://freedomninjya.hiho.jp/lessonbook/%E3%83%96%E3%83%AD%E3%82%B0/" target="_blank">
+                <h2 class="p-portfolio__list__title">
+                  架空の観光ホテルサイト
+                </h2>
+                <div class="p-portfolio__list__img">
+                  <figure>
+                    <img src="images/TravelJapan.png" alt="">
+                  </figure>
+                </div>
+                <p class="p-portfolio__list__text">
+                  Web制作教本に付属されているデザインから作成した架空のWordpressサイトです。<br>
+                  お問い合わせフォーム付きです。
+                </p>
+              </a>
+            </li>
+          </ul>
+          <!-- /.p-portfolio__lists -->
+
           <div class="c-partition_icon c-slideleft">
             <img src="images/icon-partition.svg" alt="">
           </div>
@@ -291,6 +500,115 @@
           <h1 class="c-section_header c-slideup">
             WORKS
           </h1>
+
+          <div class="p-works__listbox c-slideup">
+            <ul class="p-works__lists u-displaynone">
+              <li class="p-works__list">
+                <span class="p-works__list__tag wordpress">
+                  Wordpress
+                </span>
+                <p class="p-works__list__text">
+                  某政府告知Wordpressサイト構築
+                </p>
+              </li>
+              <li class="p-works__list">
+                <span class="p-works__list__tag wordpress">
+                  Wordpress
+                </span>
+                <p class="p-works__list__text">
+                  工業会社Wordpressサイト構築
+                </p>
+              </li>
+              <li class="p-works__list">
+                <span class="p-works__list__tag html">
+                  静的サイト
+                </span>
+                <p class="p-works__list__text">
+                  病院 大型HPコーディング
+                </p>
+              </li>
+              <li class="p-works__list">
+                <span class="p-works__list__tag html">
+                  静的サイト
+                </span>
+                <p class="p-works__list__text">
+                  ハウジングサイトコーディング
+                </p>
+              </li>
+              <li class="p-works__list">
+                <span class="p-works__list__tag html">
+                  静的サイト
+                </span>
+                <p class="p-works__list__text">
+                  脱毛クリニックLPコーディング
+                </p>
+              </li>
+            </ul>
+            <!-- /.p-works__lists -->
+            <div class="p-works__hiddenlists js-togglecontent">
+              <ul class="p-works__lists">
+                <li class="p-works__list">
+                  <span class="p-works__list__tag shopify">
+                    Shopify
+                  </span>
+                  <p class="p-works__list__text">
+                    海外ウィッグ販売Shopifyサイト制作
+                  </p>
+                </li>
+                <li class="p-works__list">
+                  <span class="p-works__list__tag shopify">
+                    Shopify
+                  </span>
+                  <p class="p-works__list__text">
+                    タオル販売shopifyサイト制作
+                  </p>
+                </li>
+                <li class="p-works__list">
+                  <span class="p-works__list__tag html">
+                    静的サイト
+                  </span>
+                  <p class="p-works__list__text">
+                    デザイン学校HP(数十ページ)制作
+                  </p>
+                </li>
+                <li class="p-works__list">
+                  <span class="p-works__list__tag html">
+                    静的サイト
+                  </span>
+                  <p class="p-works__list__text">
+                    エージェント派遣サービスLPコーディング
+                  </p>
+                </li>
+                 <li class="p-works__list">
+                  <span class="p-works__list__tag html">
+                    静的サイト
+                  </span>
+                  <p class="p-works__list__text">
+                    カメラスタジオHPコーディング
+                  </p>
+                </li>
+                <li class="p-works__list">
+                  <span class="p-works__list__tag shopify">
+                    Shopify
+                  </span>
+                  <p class="p-works__list__text">
+                    シャンプー美容液販売Shopifyサイト構築
+                  </p>
+                </li>
+              </ul>
+              <!-- /.p-works__lists -->
+            </div>
+            <!-- /.p-works__hiddenlists -->
+
+            <button class="p-works__accordionbtn">
+              もっと見る
+            </button>
+          </div>
+          <!-- /.p-works__listbox -->
+          <p class="p-works__supplement c-slideup">
+            委託してコーディング・制作した案件のためサイト詳細は伏せております。<br>記載した実績は一部のみで、他にもさまざまサイトの制作に携わっております。詳しくはぜひお問い合わせください。
+          </p>
+
           <div class="c-partition_icon c-slideleft">
             <img src="images/icon-partition.svg" alt="">
           </div>
@@ -320,6 +638,8 @@
       </small>
     </footer>
     <!-- /#l-footer -->
+
+    <div class="c-menu_bg"></div>
 
     <!-- js読み込み -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

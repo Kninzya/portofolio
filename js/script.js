@@ -1,13 +1,13 @@
 //ハンバーガーメニュー
 $(function() {
-  $(document).on("click", ".navToggle", function() {
-    $(".navToggle").toggleClass("active");
-    $(".globalMenuSp").toggleClass("active");
+  $(document).on("click", ".p-header__navToggle", function() {
+    $(".p-header__navToggle").toggleClass("js-active");
+    $(".p-header__menu_sp").toggleClass("js-active");
   });
 
-  $(".link a").on("click", function() {
-    if (window.innerWidth <= 768) {
-      $(".navToggle").click();
+  $(".p-header__menu_sp__link a").on("click", function() {
+    if (window.innerWidth <= 1024) {
+      $(".p-header__navToggle").click();
     }
   });
 });
@@ -49,7 +49,7 @@ $(function(){
 });
 
 //スクロールトリガーアニメーション
-$(window).scroll(function() {
+$(document).on("load scroll",function() {
   $(".c-slideup").each(function() {
     const position = $(this).offset().top;
     const scroll = $(window).scrollTop() + 50;
@@ -64,7 +64,7 @@ $(window).scroll(function() {
   });
 });
 
-$(window).scroll(function() {
+$(document).on("load scroll",function() {
   $(".c-slideleft").each(function() {
     const position = $(this).offset().top;
     const scroll = $(window).scrollTop() + 50;
@@ -76,5 +76,20 @@ $(window).scroll(function() {
     if (scroll + 100 < position - windowHeight) {
       $(this).removeClass("js-active");
     }
+  });
+});
+
+//アコーディオン
+$(function() {
+  $(".p-works__accordionbtn").on("click", function() {
+    $(this).toggleClass("js-active");
+    if ($(this).hasClass("js-active")) {
+      $(this).text("閉じる");
+    } else {
+      $(this).text("もっと見る");
+    }
+    $(this)
+      .prev(".js-togglecontent")
+      .slideToggle();
   });
 });
