@@ -1,0 +1,12 @@
+/*
+  scssでカスタマイズしています。
+  css編集するときはscssから変更するか、cssファイルを直接編集する場合は
+  編集以降はcssのみ編集してください。
+*/
+
+// 初期化
+@import "initialize";
+
+// 変数・mixin・モジュール読み込み
+@import "setting"; //文字色など各種設定用変数&mixin
+@import "module"; //共通モジュール

@@ -1,0 +1,512 @@
+/* ========================================
+	Founfation (id推奨)
+========================================= */
+
+html {
+  font-size: 100%;
+  @include normalpc {
+    font-size: 100%;
+  }
+  @include middlepc {
+    font-size: 100%;
+  }
+  @include smallpc {
+    font-size: 100%;
+  }
+  @include smallestpc {
+    font-size: 95%;
+  }
+  @include largetab {
+    font-size: 90%;
+  }
+  @include tab {
+    font-size: 85%;
+  }
+  @include smalltab {
+    font-size: 80%;
+  }
+  @include sp {
+    font-size: 100%;
+  }
+  @include smallsp {
+    font-size: 90%;
+  }
+  @include largesp {
+    font-size: 100%;
+  }
+  @include landscapesp {
+    font-size: 110%;
+  }
+  @include large_landscapesp {
+    font-size: 120%;
+  }
+}
+
+body {
+  font-size: 1rem;
+  color: $color-main;
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',YuGothic,'Yu Gothic',sans-serif;
+  letter-spacing: 0.05em;
+}
+
+picture {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+a,
+button {
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+/* ========================================
+	Project(コンテンツを構成する具体的な要素)
+	命名規則: .p-
+========================================= */
+
+/*----- ヘッダーカスタマイズ -----*/
+
+#l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: auto;
+  background-color: $color-blue;
+  color: #fff;
+}
+
+.p-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  margin: 0 auto;
+}
+
+.p-header__companyname {
+  font-size: rem-calc(28px);
+  @include font-english;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.p-header__innerlinks {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+  @include largetab {
+    display: none;
+  }
+}
+
+.p-header__innerlink {
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+  & a {
+    text-decoration: none;
+    font-size: rem-calc(16px);
+    color: #fff;
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+  }
+}
+
+/*----- FVカスタマイズ -----*/
+
+#l-fv {
+  position: relative;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+}
+
+.p-fv__slider {
+  width: 100%;
+  height: 100%;
+}
+
+.p-fv__slide {
+  width: 100vw;
+  height: 100vh;
+  &.slide1 {
+    background: url(../images/bg-topvisual1@2x.jpg) bottom center no-repeat;
+    background-size: cover;
+  }
+  &.slide2 {
+    background: url(../images/bg_topvisual2@2x.jpg) bottom center no-repeat;
+    background-size: cover;
+  }
+  &.slide3 {
+    background: url(../images/bg_topvisual3@2x.jpg) 50% 50% no-repeat;
+    background-size: cover;
+  }
+}
+
+.p-fv__text {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: auto;
+  color: #FFF;
+  font-family: eh, 'Roboto', 'Helvetica Neue', sans-serif;
+  font-size: rem-calc(80px);
+  text-align: center;
+}
+.typed::after {
+  content: "|";
+  animation: blink 0.7s infinite;
+}
+@keyframes blink {
+  50%{opacity: 0;}
+}
+
+/*----- ABOUTカスタマイズ -----*/
+
+#l-about {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 80px 0 100px;
+  box-sizing: border-box;
+}
+
+.p-about__flexbox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  @include sp {
+    display: block;
+  }
+}
+
+.p-about__imgbox {
+  width: rem-calc(380px);
+  height: auto;
+  @include sp {
+    margin: 0 auto;
+  }
+}
+
+.p-about__img {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.p-about__name {
+  margin: 0 auto;
+  font-size: rem-calc(32px);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1;
+}
+
+.p-about__contact {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;;
+  max-width: 330px;
+  height: rem-calc(50px);
+  margin: rem-calc(24px) auto 0;
+  border: 2px solid $color-blue;
+  border-radius: rem-calc(2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .25);
+  text-decoration: none;
+  font-size: rem-calc(24px);
+  color: $color-blue;
+  font-weight: 700;
+  line-height: 1;
+  overflow: hidden;
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    z-index: -1;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: $color-blue;
+    transition: .3s;
+  }
+  &:hover {
+    opacity: 1;
+    color: #fff;
+    &:after {
+      transform: translateX(0);
+    }
+  }
+}
+
+.p-about__status {
+  margin: rem-calc(16px) auto 0;
+  font-size: rem-calc(16px);
+  text-align: center;
+  line-height: 1.5;
+}
+
+
+.p-about__textbox {
+  flex: 1;
+  max-width: rem-calc(750px);
+  margin-left: rem-calc(30px);
+  padding-top: rem-calc(20px);
+  @include sp {
+    width: 100%;
+    height: auto;
+    margin: rem-calc(30px) auto 0;
+  }
+}
+
+.p-about__textbox__smallsection {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  &:not(:first-child) {
+    margin-top: rem-calc(30px);
+  }
+}
+
+.p-about__textbox__smallsection__title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: rem-calc(50px);
+  margin: 0 auto rem-calc(20px);
+  border-radius: rem-calc(2px);
+  background-color: $color-blue;
+  font-size: rem-calc(24px);
+  font-weight: 500;
+  line-height: 1;
+  color: #fff;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -15px;
+    border: 15px solid transparent;
+    border-top: 15px solid $color-blue;
+  }
+}
+
+.p-about__skills {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 rem-calc(10px);
+  box-sizing: border-box;
+}
+
+.p-about__skill {
+  width: 48%;
+  height: auto;
+  &:nth-child(n + 3) {
+    margin-top: rem-calc(20px);
+  }
+  & dl {
+    width: 100%;
+    height: auto;
+  }
+  & dt {
+    width: 100%;
+    height: auto;
+    font-size: rem-calc(22px);
+    line-height: 1;
+  }
+  & dd {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #707070;
+    border-radius: 2px;
+    margin-top: 5px;
+    overflow: hidden;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      height: 100%;
+      background-color: $color-lightblue;
+    }
+    &.html {
+      &:after {
+        width: 85%;
+      }
+    }
+    &.css {
+      &:after {
+        width: 80%;
+      }
+    }
+    &.javascript {
+      &:after {
+        width: 75%;
+      }
+    }
+    &.scss {
+      &:after {
+        width: 75%;
+      }
+    }
+    &.wordpress {
+      &:after {
+        width: 75%;
+      }
+    }
+    &.shopify {
+      &:after {
+        width: 70%;
+      }
+    }
+  }
+}
+
+.p-about__textbox__smallsection__text {
+  font-size: rem-calc(18px);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.p-about__textbox__smallsection__smalltext {
+  margin: 10px auto 0;
+  font-size: rem-calc(14px);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/*----- MESSAGEカスタマイズ -----*/
+
+#l-message {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 0 100px;
+  box-sizing: border-box;
+}
+
+.p-message__text {
+  width: 100%;
+  height: auto;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 16px;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+/*----- SERVICEカスタマイズ -----*/
+
+#l-service {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 0 100px;
+  box-sizing: border-box;
+}
+
+/*----- PRICEカスタマイズ -----*/
+
+#l-price {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 0 100px;
+  box-sizing: border-box;
+}
+
+/*----- PORTFOLIOカスタマイズ -----*/
+
+#l-portfolio {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 0 100px;
+  box-sizing: border-box;
+}
+
+/*----- WORKSカスタマイズ -----*/
+
+#l-works {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 0 100px;
+  box-sizing: border-box;
+}
+
+/*----- CONTACTカスタマイズ -----*/
+
+#l-contact {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 0 180px;
+  box-sizing: border-box;
+}
+
+.p-contact__text {
+  font-size: rem-calc(18px);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/*----- フッターカスタマイズ -----*/
+
+#l-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: $color-blue;
+  font-size: 12px;
+  font-weight: 500;
+  @include font-english;
+  color: #fff;
+  line-height: 1;
+}

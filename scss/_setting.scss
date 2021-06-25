@@ -1,0 +1,114 @@
+// -----------------------------------------
+// 変数記述エリア
+// -----------------------------------------
+
+$color-main: #333333;
+$color-blue: #010038;
+$color-lightblue: #293A80;
+$color-orange: #F39422;
+
+@font-face {
+	font-family: 'eh';
+	src: url(../font/EHSMB.TTF);
+}
+
+@font-face {
+	font-family: 'header';
+	src: url(../font/Geotica_2012.otf);
+}
+
+@mixin font-english {
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+// -----------------------------------------
+// mixin記述エリア
+// -----------------------------------------
+
+// レスポンシブ用
+@mixin pc {
+  @media screen and (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin normalpc {
+  @media screen and (min-width: 769px) and (min-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin middlepc {
+  @media screen and (min-width: 769px) and (max-width: 1300px) {
+    @content;
+  }
+}
+
+@mixin smallpc {
+  @media screen and (min-width: 769px) and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin smallestpc {
+  @media screen and (min-width: 769px) and (max-width: 1100px) {
+    @content;
+  }
+}
+
+@mixin largetab {
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media screen and (min-width: 769px) and (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin smalltab {
+  @media screen and (min-width: 769px) and (max-width: 800px) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin smallsp {
+  @media screen and (max-width: 360px) {
+    @content;
+  }
+}
+
+@mixin largesp {
+  @media screen and (min-width: 421px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin landscapesp {
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin large_landscapesp {
+  @media screen and (min-width: 601px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+// fontsize px → rem自動変換
+$font-size: 16;
+
+@function rem-calc($size, $font-size: $font-size) {
+  $font-size: $font-size + 0px;
+  $remSize: $size / $font-size;
+  @return #{$remSize}rem;
+}

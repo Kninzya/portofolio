@@ -1,0 +1,348 @@
+@charset "UTF-8";
+
+/*
+  scssでカスタマイズしています。
+  css編集するときはscssから変更するか、cssファイルを直接編集する場合は
+  編集以降はcssのみ編集してください。
+*/
+
+/*---------------	リセットcss	---------------*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  font-style: normal;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+a:focus {
+  outline: none;
+}
+
+input,
+textarea,
+button {
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+}
+
+body {
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: "eh";
+  src: url(../font/EHSMB.TTF);
+}
+
+@font-face {
+  font-family: "header";
+  src: url(../font/Geotica_2012.otf);
+}
+
+/* ========================================
+	Component(共通利用の部品。幅とか色は持たせない)
+	命名規則: .c-
+========================================= */
+
+.c-container {
+  width: 100%;
+  max-width: 1320px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*----- レスポンシブ表示切り替え -----*/
+
+.c-pc_only {
+  display: block !important;
+}
+
+.c-pc_only--flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.c-sp_only {
+  display: none !important;
+}
+
+/*----- 共通パーツ -----*/
+
+.c-section_header {
+  margin: 0 auto 5rem;
+  font-size: 4.5rem;
+  font-family: header,"Roboto", "Helvetica Neue", sans-serif;
+  text-align: center;
+  line-height: 1;
+}
+
+.c-partition_icon {
+  width: 10rem;
+  height: auto;
+  margin: 80px auto 0;
+}
+
+.c-slideup {
+  -webkit-transform: translate3d(0, 50px, 0);
+  transform: translate3d(0, 50px, 0);
+  -webkit-transition: all 1.5s ease;
+  transition: all 1.5s ease;
+  opacity: 0;
+}
+
+.c-slideup.js-active {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+.c-slideleft {
+  -webkit-transform: translate3d(100px, 0, 0);
+  transform: translate3d(100px, 0, 0);
+  -webkit-transition: all 1.5s ease;
+  transition: all 1.5s ease;
+  opacity: 0;
+}
+
+.c-slideleft.js-active {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+/* ========================================
+	Utility(わずかな調整などを行うための便利要素)
+	命名規則: .u-
+========================================= */
+
+@media screen and (min-width: 769px) {
+  .c-container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 769px) and (min-width: 1400px) {
+  .c-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .c-container {
+    width: 100%;
+  }
+
+  .c-pc_only {
+    display: none !important;
+  }
+
+  .c-pc_only--flex {
+    display: none !important;
+  }
+
+  .c-sp_only {
+    display: block !important;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .c-container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1300px) {
+  .c-container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .c-container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1100px) {
+  .c-container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .c-container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 900px) {
+  .c-container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 800px) {
+  .c-container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 421px) and (max-width: 768px) {
+  .c-container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .c-container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  .c-container {
+    width: 100%;
+  }
+}

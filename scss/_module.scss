@@ -1,0 +1,116 @@
+/* ========================================
+	Component(共通利用の部品。幅とか色は持たせない)
+	命名規則: .c-
+========================================= */
+
+.c-container {
+  width: 100%;
+  max-width: 1320px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 rem-calc(40px);
+  box-sizing: border-box;
+  @include pc {
+    width: 100%;
+  }
+  @include normalpc {
+    width: 100%;
+  }
+  @include middlepc {
+    width: 100%;
+  }
+  @include smallpc {
+    width: 100%;
+  }
+  @include smallestpc {
+    width: 100%;
+  }
+  @include largetab {
+    width: 100%;
+  }
+  @include tab {
+    width: 100%;
+  }
+  @include smalltab {
+    width: 100%;
+  }
+  @include sp {
+    width: 100%;
+  }
+  @include smallsp {
+    width: 100%;
+  }
+  @include largesp {
+    width: 100%;
+  }
+  @include landscapesp {
+    width: 100%;
+  }
+  @include large_landscapesp {
+    width: 100%;
+  }
+}
+
+/*----- レスポンシブ表示切り替え -----*/
+
+.c-pc_only {
+  display: block !important;
+  @include sp {
+    display: none !important;
+  }
+}
+
+.c-pc_only--flex {
+  display: flex !important;
+  @include sp {
+    display: none !important;
+  }
+}
+
+.c-sp_only {
+  display: none !important;
+  @include sp {
+    display: block !important;
+  }
+}
+
+/*----- 共通パーツ -----*/
+
+.c-section_header {
+  margin: 0 auto rem-calc(80px);
+  font-size: rem-calc(72px);
+  font-family: header,'Roboto', 'Helvetica Neue', sans-serif;
+  text-align: center;
+  line-height: 1;
+}
+
+.c-partition_icon {
+  width: rem-calc(160px);
+  height: auto;
+  margin: 80px auto 0;
+}
+
+.c-slideup {
+  opacity: 0;
+  transform: translate3d(0, 50px, 0);
+  transition: all 1.5s ease;
+  &.js-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.c-slideleft {
+  opacity: 0;
+  transform: translate3d(100px, 0, 0);
+  transition: all 1.5s ease;
+  &.js-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* ========================================
+	Utility(わずかな調整などを行うための便利要素)
+	命名規則: .u-
+========================================= */
